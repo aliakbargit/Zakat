@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Zakat</string>
+
+    <string-array name="Application_Category_List">
+        <item> Zakat For Fee Sabilillah</item>
+        <item> Zakat For Education</item>
+        <item> Zakat For Needy</item>
+        <item> Zakat For Converted Muslim</item>
+        <item> Zakat For Debtors</item>
+        <item> Zakat For Rent House</item>
+        <item> Zakat For Zakat Collector</item>
+    </string-array>
+
+    <string name="user_email">User email</string>
+    <string name="password">Enter you password</string>
+    <string name="login_btn_txt">Login</string>
+    <string name="logout_menu">Logout</string>
+    <string name="nav_add_article">Add Article</string>
+    <string name="nav_reject_list">Reject List</string>
+    <string name="nav_pending_list">Pending List</string>
+    <string name="nav_admin_profile">Profile</string>
+    <string name="nav_add_slider">Add Slider</string>
+    <string name="nav_approve_list">Approve List</string>
+    <string name="nav_user_profile">Profile</string>
+    <string name="nav_user_apply">Apply</string>
+    <string name="nav_check_status">Check Status</string>
+    <string name="done">Done</string>
+    <string name="operation_successful">Operation Successful</string>
+    <string name="user_password">Password</string>
+</resources>

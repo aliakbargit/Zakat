@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/user_nav_graph"
+    app:startDestination="@id/user_home_fragment"
+    >
+
+    <fragment android:id="@+id/user_home_fragment"
+        android:label="home"
+        android:name="com.example.zakat.views.user.fragments.UserHomeFragment"
+        tools:layout="@layout/user_home"
+        >
+        <action
+            android:id="@+id/action_article_to_details_view"
+            app:destination="@+id/user_article_details_view"
+            app:popUpTo="@id/user_home_fragment" />
+    </fragment>
+    <fragment android:id="@+id/user_profile"
+        android:label="@string/nav_user_profile"
+        android:name="com.example.zakat.views.user.fragments.UserProfileFragment"
+        tools:layout="@layout/user_profile"
+        />
+    <include app:graph="@navigation/user_type_selector"/>
+    <fragment android:id="@+id/user_apply"
+        android:label="@string/nav_user_apply"
+        android:name="com.example.zakat.views.user.fragments.UserApplyPhaseOneFragment"
+        tools:layout="@layout/user_apply_phase_one"
+        >
+        <action
+            android:id="@+id/action_user_apply_to_final_submission"
+            app:destination="@id/user_apply_phase_two"
+            app:popUpTo="@id/user_apply" />
+    </fragment>
+    <fragment android:id="@+id/user_apply_phase_two"
+        android:label="Final Submission"
+        android:name="com.example.zakat.views.user.fragments.UserApplyPhaseTwoFragment"
+        tools:layout="@layout/user_apply_phase_two">
+
+        <argument
+            android:name="Next"
+            app:argType="com.example.zakat.models.ApplicationModel" />
+        <action
+            android:id="@+id/action_user_apply_phase_two_to_type_selector"
+            app:destination="@id/type_selector"
+            app:popUpTo="@id/user_apply" />
+    </fragment>
+
+    <fragment android:id="@+id/user_check_status"
+        android:label="@string/nav_check_status"
+        android:name="com.example.zakat.views.user.fragments.UserCheckStatusFragment"
+        tools:layout="@layout/user_check_status"
+        />
+
+    <fragment android:id="@+id/user_article_details_view"
+        android:label="Article Details"
+        android:name="com.example.zakat.views.user.fragments.UserArticleDetails"
+        tools:layout="@layout/user_article_details"
+        >
+        <argument
+            android:name="article"
+            app:argType="com.example.zakat.models.core.ZakatArticle" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/successOrFailure"
+        android:name="com.example.zakat.views.core.SuccessOrFailure"
+        android:label="SuccessOrFailure"
+        tools:layout="@layout/success_or_failure"
+        >
+        <action
+            android:id="@+id/action_successOrFailure_to_user_apply"
+            app:destination="@id/user_apply" />
+    </fragment>
+
+</navigation>

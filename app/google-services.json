@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1028800354226",
+    "firebase_url": "https://zakat-88816.firebaseio.com",
+    "project_id": "zakat-88816",
+    "storage_bucket": "zakat-88816.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028800354226:android:813dac848ccdb7bd1d76ab",
+        "android_client_info": {
+          "package_name": "com.example.zakat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028800354226-944nb24f0kuqjbc5a38k8rou0sjsq7ti.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClv5GtFnDazhLGSgb0kYHRoE4gWN3L814"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028800354226-944nb24f0kuqjbc5a38k8rou0sjsq7ti.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/admin_nav_graph"
+    app:startDestination="@id/nav_admin_profile">
+
+    <fragment android:id="@+id/nav_admin_profile"
+        android:label="@string/nav_admin_profile"
+        android:name="com.example.zakat.views.admin.fragments.AdminProfileFragment"
+        tools:layout="@layout/admin_profile"
+        />
+    <fragment android:id="@+id/nav_add_article"
+        android:label="@string/nav_add_article"
+        android:name="com.example.zakat.views.admin.fragments.AdminAddArticleFragment"
+        tools:layout="@layout/admin_add_articale"
+        >
+        <action
+            android:id="@+id/action_nav_add_article_to_admin_successOrFailure"
+            app:destination="@id/admin_successOrFailure"
+            app:popUpTo="@id/nav_admin_profile" />
+    </fragment>
+    <fragment android:id="@+id/nav_add_slider"
+        android:label="@string/nav_add_slider"
+        android:name="com.example.zakat.views.admin.fragments.AdminAddSliderFragment"
+        tools:layout="@layout/admin_add_slider"
+        >
+        <action
+            android:id="@+id/action_nav_add_slider_to_admin_successOrFailure"
+            app:destination="@id/admin_successOrFailure"
+            app:popUpTo="@id/nav_admin_profile" />
+    </fragment>
+    <fragment android:id="@+id/nav_approve_list"
+        android:label="@string/nav_approve_list"
+        android:name="com.example.zakat.views.admin.fragments.AdminApproveListFragment"
+        tools:layout="@layout/admin_approve_list"
+        >
+        <action android:id="@+id/action_user_application_to_details_view"
+            app:destination="@+id/admin_user_application_details"
+            />
+    </fragment>
+
+    <fragment android:id="@+id/nav_pending_list"
+        android:label="@string/nav_pending_list"
+        android:name="com.example.zakat.views.admin.fragments.AdminPendingListFragment"
+        tools:layout="@layout/admin_pending_list"
+        >
+        <action android:id="@+id/action_user_application_to_details_view"
+            app:destination="@+id/admin_user_application_details"
+            />
+    </fragment>
+    <fragment android:id="@+id/nav_reject_list"
+        android:label="@string/nav_reject_list"
+        android:name="com.example.zakat.views.admin.fragments.AdminRejectListFragment"
+        tools:layout="@layout/admin_reject_list"
+        >
+        <action android:id="@+id/action_user_application_to_details_view"
+            app:destination="@+id/admin_user_application_details"
+            />
+    </fragment>
+
+    <fragment android:id="@+id/admin_user_application_details"
+        android:label="Application Details"
+        android:name="com.example.zakat.views.admin.fragments.AdminApplicationDetailsView"
+        tools:layout="@layout/admin_application_details_view"
+        >
+        <action
+            android:id="@+id/action_admin_user_application_details_to_nav_approve_list"
+            app:destination="@id/nav_approve_list" />
+        <action
+            android:id="@+id/action_admin_user_application_details_to_nav_pending_list"
+            app:destination="@id/nav_pending_list" />
+        <action
+            android:id="@+id/action_admin_user_application_details_to_nav_reject_list"
+            app:destination="@id/nav_reject_list" />
+        <argument
+            android:name="application_data"
+            app:argType="com.example.zakat.models.ApplicationModel" />
+        <action
+            android:id="@+id/action_admin_user_application_details_to_successOrFailure2"
+            app:destination="@id/admin_successOrFailure" />
+    </fragment>
+    <fragment
+        android:id="@+id/admin_successOrFailure"
+        android:name="com.example.zakat.views.core.SuccessOrFailure"
+        android:label="Action Completed"
+        tools:layout="@layout/success_or_failure"
+        >
+        <action
+            android:id="@+id/action_admin_successOrFailure_to_nav_approve_list"
+            app:destination="@id/nav_approve_list" />
+        <action
+            android:id="@+id/action_admin_successOrFailure_to_nav_pending_list"
+            app:destination="@id/nav_pending_list" />
+        <action
+            android:id="@+id/action_admin_successOrFailure_to_nav_reject_list"
+            app:destination="@id/nav_reject_list" />
+        <action
+            android:id="@+id/action_admin_successOrFailure_to_nav_admin_profile"
+            app:destination="@id/nav_admin_profile" />
+        <argument
+            android:name="SuccessOrErrorData"
+            app:argType="com.example.zakat.models.core.SuccessOrFailureModel"
+            app:nullable="true" />
+    </fragment>
+
+</navigation>

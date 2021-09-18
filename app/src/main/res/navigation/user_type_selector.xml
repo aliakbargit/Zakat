@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/type_selector"
+    app:startDestination="@+id/common_type_fragment"
+    >
+
+    <fragment android:id="@+id/common_type_fragment"
+        android:label="Final Submission"
+        android:name="com.example.zakat.views.user.fragments.type.CommonTypeFragment"
+        tools:layout="@layout/user_common_type_fragment">
+        <argument
+            android:name="ApplicationFinal"
+            app:argType="com.example.zakat.models.ApplicationModel" />
+    </fragment>
+    <fragment android:id="@+id/rent_house_type_fragment"
+        android:name="com.example.zakat.views.user.fragments.type.RentHouseTypeFragment"
+        tools:layout="@layout/user_rent_type_fragment">
+        <argument
+            android:name="ApplicationFinal"
+            app:argType="com.example.zakat.models.ApplicationModel" />
+    </fragment>
+    <fragment android:id="@+id/education_type_fragment"
+        android:name="com.example.zakat.views.user.fragments.type.EducationTypeFragment"
+        tools:layout="@layout/user_education_type_fragment"
+        >
+        <argument
+            android:name="ApplicationFinal"
+            app:argType="com.example.zakat.models.ApplicationModel" />
+    </fragment>
+</navigation>
