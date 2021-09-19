@@ -29,26 +29,23 @@ public abstract class BaseActivity extends DaggerAppCompatActivity {
     }
 
     public void observeUserLoginState(){
-        sessionManager.getAuthUser().observe(this, new Observer<AuthResource<User>>() {
-            @Override
-            public void onChanged(AuthResource<User> userAuthResource) {
-                if(userAuthResource !=null){
-                    switch (userAuthResource.status){
-                        case LOADING:
-                            //loading
-                            Log.d(TAG, "onChanged: Loading called");
-                            break;
-                        case AUTHENTICATED:
-                            Log.d(TAG, "onChanged: Auth Success");
-                            break;
-                        case ERROR:
-                            Log.d(TAG, "onChanged: Auth Fail");
-                            break;
-                        case NOT_AUTHENTICATED:
-                            Log.d(TAG, "onChanged: Wrong pass or user name");
-                            navToLogin();
-                            break;
-                    }
+        sessionManager.getAuthUser().observe(this, userAuthResource -> {
+            if(userAuthResource !=null){
+                switch (userAuthResource.status){
+                    case LOADING:
+                        //loading
+                        Log.d(TAG, "onChanged: Loading called");
+                        break;
+                    case AUTHENTICATED:
+                        Log.d(TAG, "onChanged: Auth Success");
+                        break;
+                    case ERROR:
+                        Log.d(TAG, "onChanged: Auth Fail");
+                        break;
+                    case NOT_AUTHENTICATED:
+                        Log.d(TAG, "onChanged: Wrong pass or user name");
+                        navToLogin();
+                        break;
                 }
             }
         });

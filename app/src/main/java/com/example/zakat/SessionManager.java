@@ -28,12 +28,9 @@ public class SessionManager {
     public void loginWithEmailPassword(final LiveData<AuthResource<User>> source){
         if(cachedUser != null){
             cachedUser.setValue(AuthResource.loading((User)null));
-            cachedUser.addSource(source, new Observer<AuthResource<User>>() {
-                @Override
-                public void onChanged(AuthResource<User> userAuthResource) {
-                    cachedUser.setValue(userAuthResource);
-                    cachedUser.removeSource(source);
-                }
+            cachedUser.addSource(source, userAuthResource -> {
+                cachedUser.setValue(userAuthResource);
+                cachedUser.removeSource(source);
             });
         }
         else {

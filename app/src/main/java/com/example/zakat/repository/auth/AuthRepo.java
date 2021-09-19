@@ -61,6 +61,7 @@ public class AuthRepo {
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 if(snapshot.exists()){
                                     User userDB = snapshot.getValue(User.class);
+                                    assert userDB != null;
                                     user = new User(userDB.getUid(),userDB.getEmail(),userDB.getType());
                                     use.setValue(AuthResource.authenticated(user));
                                 }
